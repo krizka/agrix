@@ -21,3 +21,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 
 react
 twbs:bootstrap
+
+agrix:users
+agrix:referal
+agrix:shop
