@@ -1,0 +1,34 @@
+<template name="invoiceTest">
+    <div id="invoice-test-area" class="test-area">
+        <div>
+            <label>userId:</label>
+            <input class="user-id-input" type="text" required="required" value="d2wuWCYH5yLWWtLRA">
+        </div>
+        <hr>
+        <div class="invoice-new-test">
+            <input id="invoice-amount-input" type="text" placeholder="amount">
+            <select id="invoice-pay-to-id-select">
+                {{#each accountList}}
+                    <option value="{{id}}">{{id}} | {{currency.code}}</option>
+                {{/each}}
+            </select>
+            <input id="do-invoice-new-button" type="button" value="invoiceNew">
+        </div>
+        <div class="invoice-list-test">
+            <input id="do-invoice-list-button" type="button" value="invoiceList">
+            <ul>
+                {{#if invoiceList }}
+                    {{#each invoiceList}}
+                        <li>
+                            {{id}} | {{amount}} | {{account.currencyId}} |
+                            <input type="button" id="do-invoice-delete-button" value="X" data-id="{{id}}"> |
+                            <input type="button" id="do-invoice-pay-button" value="$" data-id="{{id}}"> |
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <span>invoiceList is empty</span>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,39 @@
+<template name="accountTest">
+    <div id="account-test-area" class="test-area">
+        <div>
+            <label>userId:</label>
+            <input class="user-id-input" type="text" required="required" value="d2wuWCYH5yLWWtLRA">
+        </div>
+        <hr>
+        <div id="account-test-new">
+            <select id="account-currency-choice">
+                {{#each currencyList}}
+                    <option value="{{id}}">{{code}}</option>
+                {{/each}}
+            </select>
+            <input id="do-account-new-button" type="button" value="accountNew">
+        </div>
+        <div id="account-test-list">
+            <input id="do-account-list-button" type="button" value="accountList"><br>
+            <ul>
+                {{#if accountList}}
+                    {{#each accountList}}
+                        <li>
+                            {{id}} | {{amount}} | {{currency.code}} |
+                            <input class="do-account-remove-button" type="button" data-id="{{id}}" value="X"> |
+                            <select id="transfer-to-account-id-input-{{id}}">
+                                {{#each accountList}}
+                                    <option value="{{id}}">{{id}} | {{currency.code}}</option>
+                                {{/each}}
+                            </select>
+                            <input id="transfer-amount-input-{{id}}" type="number" placeholder="amount"> |
+                            <input class="do-account-transfer-button" type="button" data-id="{{id}}" value="t">
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <span>accountList is empty</span>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</template>

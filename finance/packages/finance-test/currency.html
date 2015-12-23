@@ -1,0 +1,29 @@
+<template name="currencyTest">
+    <div id="currency-test-area" class="test-area">
+        <div>
+            <label>userId:</label>
+            <input class="user-id-input" type="text" required="required" value="d2wuWCYH5yLWWtLRA">
+        </div>
+        <hr>
+        <div id="currency-test-new">
+            <input id="currency-code-input" type="text" required="required" placeholder="currencyCode">
+            <input id="do-currency-new-button" type="button" value="currencyNew">
+        </div>
+
+        <div class="currency-test-list">
+            <input id="do-currency-list-button" type="button" value="currencyList">
+            <ul>
+                {{#if currencyList}}
+                    {{#each currencyList}}
+                        <li>
+                            {{id}} | {{code}} |
+                            <input class="do-currency-delete-button" type="button" data-id="{{id}}" value="x">
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <span>currencyList is empty</span>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</template>

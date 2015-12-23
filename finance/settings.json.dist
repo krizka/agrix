@@ -1,0 +1,10 @@
+{
+  "development": {
+    "database": "",
+    "username": "",
+    "password": "",
+    "host": "",
+    "dialect": ""
+  },
+  "frontMongoConnectUrl": "some/url/string"
+}

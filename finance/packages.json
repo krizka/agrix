@@ -1,0 +1,7 @@
+{
+    "sequelize": "3.12.1",
+    "sequelize-cli": "2.0.0",
+    "pg": "4.4.2",
+    "pg-native": "1.9.0",
+    "pg-hstore": "https://github.com/scarney81/pg-hstore/archive/7347c348b2d76f5922369067f320a0e9e9e81743.tar.gz"
+}

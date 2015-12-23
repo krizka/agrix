@@ -1,0 +1,94 @@
+@startuml
+
+package from {
+    object RawRequest {
+        id :int:pk
+        userId :string
+        hash :string(32)
+        method :string
+        rawData :json
+        response :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+}
+
+package result {
+    object Currency {
+        id :int:pk
+        code :string(3)
+        userData :json
+    }
+
+    object Account {
+        id :int:pk
+        ownerId :string
+        currencyId :int:fk
+        amount: string
+        amountInt: bigInt
+        userData :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+
+    object Transaction {
+        id :int:pk
+        accountId :int:fk
+        amount: string
+        amountInt: bigInt
+        invoiceId :int:fk
+        userData :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+
+    object Invoice {
+        id :int:pk
+        ownerId :string
+        amount: string
+        amountInt: bigInt
+        payToId :int:fk
+        paid: :bool
+        userData :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+
+    object ExchangeRate {
+        fromCurrencyId :int:fk
+        toCurrencyId :int:fk
+        rate
+        userData :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+
+    object ExchangeRateHistory {
+        fromCurrency :string(3)
+        toCurrency :string(3)
+        rate
+        userData :json
+        createdAt :dateTime
+        updatedAt :dateTime
+    }
+
+}
+
+from -right-> result
+
+Account -left-> Currency:c_id
+Transaction -down-> Account:a_id
+Transaction -down-> Currency:c_id
+Invoice -down-> Account:pTo_id
+Account -up-> Invoice:a_id
+ExchangeRate -up-> Currency:fc_id
+ExchangeRate -up-> Currency:tc_id
+Transaction -right-> Invoice:i_id
+ExchangeRateHistory -up- ExchangeRate
+
+legend right
+  <b>:pk</b> primary key
+  <b>:fk</b> foreign key
+endlegend
+
+@enduml
