@@ -5,7 +5,7 @@
 import {MarkdownEditor} from 'react-markdown-editor';
 
 export const NodeText = ({ node }) => {
-  return (<MarkdownEditor initialContent={`Text: ${node.name}`} />)
+  return (<div>Text: ${node.name}</div>)
 };
 
 export const NodeTextEdit = React.createClass({
