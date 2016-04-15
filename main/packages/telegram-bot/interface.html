@@ -1,0 +1,30 @@
+<template name='telegram:telegram-connect:admin'>
+    <p>
+        {{settings}}
+    </p>
+    {{#if connected}}
+        Вы подключены к номеру {{phoneNumber}}
+    {{else}}
+        {{#if waitingCode}}
+            <form id='telegram-code'>
+                <label>
+                    Код
+                    <input type='text' name='checkCode'>
+                </label>
+                <input type="submit">Проверить код
+                <button id='cancel'>Отмена</button>
+            </form>
+        {{else}}
+            <form id='telegram-connect'>
+                <label>
+                    Номер телефона
+                    <input type='text' name='phoneNumber'>
+                </label>
+                <input type="submit">Подключиться
+            </form>
+        {{/if}}
+    {{/if}}
+</template>
+
+
+

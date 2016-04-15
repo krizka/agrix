@@ -1,0 +1,101 @@
+{
+  "dependencies": {
+    "avconv": {
+      "version": "3.0.1"
+    },
+    "get-log": {
+      "version": "1.1.5",
+      "dependencies": {
+        "colors": {
+          "version": "1.1.2"
+        },
+        "debug": {
+          "version": "2.2.0",
+          "dependencies": {
+            "ms": {
+              "version": "0.7.1"
+            }
+          }
+        },
+        "buffer-crc32": {
+          "version": "0.2.5"
+        }
+      }
+    },
+    "telegram.link": {
+      "version": "0.6.3",
+      "dependencies": {
+        "get-flow": {
+          "version": "0.3.0"
+        },
+        "requirish": {
+          "version": "0.3.0",
+          "dependencies": {
+            "resolve": {
+              "version": "1.1.6"
+            },
+            "through2": {
+              "version": "2.0.0",
+              "dependencies": {
+                "readable-stream": {
+                  "version": "2.0.3",
+                  "dependencies": {
+                    "core-util-is": {
+                      "version": "1.0.1"
+                    },
+                    "inherits": {
+                      "version": "2.0.1"
+                    },
+                    "isarray": {
+                      "version": "0.0.1"
+                    },
+                    "process-nextick-args": {
+                      "version": "1.0.3"
+                    },
+                    "string_decoder": {
+                      "version": "0.10.31"
+                    },
+                    "util-deprecate": {
+                      "version": "1.0.2"
+                    }
+                  }
+                },
+                "xtend": {
+                  "version": "4.0.0"
+                }
+              }
+            }
+          }
+        },
+        "telegram-tl-node": {
+          "version": "0.11.5",
+          "dependencies": {
+            "jsbn": {
+              "version": "0.0.0"
+            }
+          }
+        },
+        "telegram-mt-node": {
+          "version": "0.9.7",
+          "dependencies": {
+            "bigint-node": {
+              "version": "1.0.4"
+            },
+            "jsbn": {
+              "version": "0.0.0"
+            },
+            "node-cryptojs-aes": {
+              "version": "git+https://github.com/enricostara/node-cryptojs-aes#55a5ca9a48652870ae6a8c9be0b6e4147754eec1"
+            }
+          }
+        },
+        "colors": {
+          "version": "1.1.2"
+        },
+        "es6-promise": {
+          "version": "3.0.2"
+        }
+      }
+    }
+  }
+}
